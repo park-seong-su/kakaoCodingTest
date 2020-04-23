@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+#include <stack>
 using namespace std;
 
 int solution(vector<vector<int>> board, vector<int> moves) {
