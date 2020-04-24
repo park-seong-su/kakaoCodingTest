@@ -1,4 +1,4 @@
-//테스트 케이스 all clear, 효율성 zore
+//testcase all clear, efficiency zore
 #include <string>
 #include <vector>
 #include <algorithm>
