@@ -1,3 +1,33 @@
+#include <string>
+#include <vector>
+#include <map>
+using namespace std;
+
+long long Find(map<long long, long long>& parent, long long x) {
+    if (parent[x] == 0) {
+        return x;
+    }
+    else {
+        return parent[x] = Find(parent, parent[x]);
+    }
+}
+
+vector<long long> solution(long long k, vector<long long> room_number) {
+    vector<long long> answer;
+    int rnSize = room_number.size();
+    map<long long, long long> parent;
+
+    for (int i = 0; i < rnSize; i++) {
+        long long rn = room_number[i];
+        long long emptyRoom = Find(parent, rn);
+        answer.push_back(emptyRoom);
+        parent[emptyRoom] = emptyRoom + 1; //Union
+    }
+    return answer;
+}
+
+
+/*
 //testcase all clear, efficiency zore
 #include <string>
 #include <vector>
@@ -37,3 +67,4 @@ vector<long long> solution(long long k, vector<long long> room_number) {
     }
     return answer;
 }
+*/
